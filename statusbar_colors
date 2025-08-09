@@ -1,0 +1,23 @@
+" buffer number
+hi User1 guifg=Black guibg=#FFAF00
+hi User1 ctermfg=Black ctermbg=214
+
+" file path
+hi User2 guifg=Black guibg=#FFAF00
+hi User2 ctermfg=Black ctermbg=214
+
+" empty middle space
+hi User3 guifg=Black guibg=#626262
+hi User3 ctermfg=Black ctermbg=241
+
+" line number / total
+hi User4 guifg=Black guibg=#87D7FF
+hi User4 ctermfg=Black ctermbg=117
+
+" column number
+hi User5 guifg=Black guibg=DarkCyan
+hi User5 ctermfg=Black ctermbg=DarkCyan
+
+" modified / read only
+hi User6 guifg=Black guibg=#1C1C1C
+hi User6 ctermfg=White ctermbg=234
