@@ -10,9 +10,6 @@ set relativenumber
 " Set the program used for grep
 set grepprg=grep\ --vimgrep
 
-"Set the format string for compile errors
-set errorformat=%E%f:%l:%m
-
 " Turn on syntax highlighting
 syntax enable
 
@@ -133,33 +130,46 @@ nnoremap <C-f> :find
 " find tag
 nnoremap <C-o> :tag *  
 
-" search
-nnoremap <C-s> :g/
-
 " split window navigation
 nnoremap <silent><C-h> <C-w>h
 nnoremap <silent><C-j> <C-w>j
 nnoremap <silent><C-k> <C-w>k
 nnoremap <silent><C-l> <C-w>l
 
-" save and quit
-nnoremap <silent><C-q> :wq<cr>
+" quit
+nnoremap <silent><C-q> :q<cr>
 
-" quit without saving
-nnoremap <silent><C-c> :q<cr>
+" save
+nnoremap <silent><C-s> :w<cr>
+
+" close buffer
+nnoremap <silent><C-b> :bd<cr>
 
 " navigate back in the tag stack
-nnoremap <silent>gd <C-]>
-nnoremap <silent>gu <C-T>
+nnoremap <nowait><silent>gd <C-]>
+nnoremap <nowait><silent>gu <C-T>
 
 " open tag in new window
-nnoremap <silent>gp <C-w><C-]>
+nnoremap <nowait><silent>gp <C-w><C-]>
+
+" go to other bracket
+nnoremap <nowait><silent>gb %
 
 " invert window split direction
-nnoremap <silent><C--> :wincmd H<cr>
-nnoremap <silent><C-=> :wincmd J<cr>
+nnoremap <nowait><silent><C--> :wincmd H<cr>
+nnoremap <nowait><silent><C-=> :wincmd J<cr>
 
 " nagivate tag search results
-nnoremap <silent><C-n> :cnext<cr>
-nnoremap <silent><C-p> :cprev<cr>
-nnoremap <silent><C-c> :cclose<cr>
+nnoremap <nowait><silent><C-n> :cnext<cr>
+nnoremap <nowait><silent><C-p> :cprev<cr>
+nnoremap <nowait><silent><C-c> :cclose<cr>
+
+" navigate buffers
+nnoremap <nowait><silent><C-,> :bprev<cr>
+nnoremap <nowait><silent><C-.> :bnext<cr>
+
+" Building
+nnoremap <nowait><silent><F1>  :botright terminal make -j 8<cr>
+inoremap <nowait><silent><F1>  :botright terminal make -j 8<cr>
+nnoremap <nowait><silent><F12> :botright terminal make -j 8 clean<cr>
+inoremap <nowait><silent><F12> :botright terminal make -j 8 clean<cr>
